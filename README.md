@@ -2,17 +2,18 @@
 
 PremiumStateBot is python powered Telegram Bot to connect to a server and execute some check on it
 
-### Set the following environment variable
+### Set the following environment variable in the Dockerfile
 
-ENV TOKEN=<TELEGRAM BOT TOKEN>
+ENV TOKEN= <TELEGRAM BOT TOKEN>
  
-ENV TELNET_PORT=<PORT TO CHECK>
+ENV TELNET_PORT= <PORT TO CHECK>
  
 ENV ADDRESS= <IP ADDRESS OR HOSTNAME>
  
-ENV USERNAME= < USERNAME>
+ENV USERNAME= <USERNAME>
 
 ENV PASSWORD= <PASSWORD>
+ 
 ENV UI_PORT= <UI PORT of the web service>
 
 ### Deploy the Bot in Heroku
