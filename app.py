@@ -5,7 +5,7 @@ import subprocess
 #from pexpect import pxssh
 
 TOKEN = os.environ['BOTKEY']
-TELNET_PORT = os.environ['TEL_PORT']
+TELNET_PORT = os.environ['TELNET_PORT']
 #SSH_PORT= os.environ['SSH_PORT']
 ADDRESS = os.environ['ADDRESS']
 USERNAME= os.environ['USERNAME']
@@ -20,19 +20,19 @@ def on_chat_message(msg):
           bot.sendMessage(chat_id, 'ciao %s! Che vuoi fare?'%name)
 	  if txt == 'Checkport':
       	    bot.sendMessage(chat_id, 'eseguo il comando: %s'%txt)
-	    checkportresult=subprocess.check_output("nmap -Pn -p "+ TELNET_PORT +" "+ ADDRESS + " | awk '{print $2}' | awk 'NR==6'", shell=True);
+	    checkportresult=subprocess.check_output("nmap -Pn -p "+ TELNET_PORT +" "+ ADDRESS + " | awk '{print $2}' | awk 'NR==6'", shell=True)	
             bot.sendMessage(chat_id, 'stato porta: %s'%checkportresult)
    	  if txt == 'Standby':
 	    bot.sendMessage(chat_id, 'eseguo il comando: %s'%txt)
-	    stanbyresult=subprocess.check_output("wget -O /dev/null -q http://" + USERNAME +":"+ PASSWORD +"@"+ ADDRESS +":"+ UI_PORT +"/web/powerstate?newstate=0", shell=True);
+	    stanbyresult=subprocess.check_output("wget -O /dev/null -q http://" + USERNAME +":"+ PASSWORD +"@"+ ADDRESS +":"+ UI_PORT +"/web/powerstate?newstate=0", shell=True)
 	    bot.sendMessage(chat_id, 'comando esguito con successo: %s'%stanbyresult)
 	  if txt == 'Screenshot':
 	    bot.sendMessage(chat_id, 'eseguo il comando: %s'%txt)
-	    image=subprocess.check_output("wget -O screen.jpeg -q http://" + USERNAME +":"+ PASSWORD +"@"+ ADDRESS +":"+ UI_PORT +"/grab", shell=True);
+	    image=subprocess.check_output("wget -O screen.jpeg -q http://" + USERNAME +":"+ PASSWORD +"@"+ ADDRESS +":"+ UI_PORT +"/grab", shell=True)
 	    bot.sendPhoto(chat_id, photo=open('screen.jpeg', 'rb'))
 	  if txt == 'Wake':
             bot.sendMessage(chat_id, 'eseguo il comando: %s'%txt)
-            wakeresult=subprocess.check_output("wget -O /dev/null -q http://" + USERNAME +":"+ PASSWORD +"@"+ ADDRESS +":"+ UI_PORT +"/web/remotecontrol?command=116", shell=True);
+            wakeresult=subprocess.check_output("wget -O /dev/null -q http://" + USERNAME +":"+ PASSWORD +"@"+ ADDRESS +":"+ UI_PORT +"/web/remotecontrol?command=116", shell=True)
             bot.sendMessage(chat_id, 'comando esguito con successo: %s'%wakeresult)
 #          if txt == 'Restart':
 #            bot.sendMessage(chat_id, 'eseguo il comando: %s'%txt)
