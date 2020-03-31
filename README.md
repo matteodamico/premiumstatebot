@@ -4,7 +4,7 @@ PremiumStateBot is python powered Telegram Bot to connect to a server and execut
 
 ### Set the following environment variable in the Dockerfile
 
-ENV TOKEN="TELEGRAM BOT TOKEN"
+ENV BOT_KEY="TELEGRAM BOT TOKEN"
  
 ENV TELNET_PORT="PORT TO CHECK"
  
