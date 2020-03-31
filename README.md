@@ -5,9 +5,13 @@ PremiumStateBot is python powered Telegram Bot to connect to a server and execut
 ### Set the following environment variable
 
 ENV TOKEN=<TELEGRAM BOT TOKEN>
-ENV TELNET_PORT=<PORT TO CHECK> 
+ 
+ENV TELNET_PORT=<PORT TO CHECK>
+ 
 ENV ADDRESS= <IP ADDRESS OR HOSTNAME>
+ 
 ENV USERNAME= < USERNAME>
+
 ENV PASSWORD= <PASSWORD>
 ENV UI_PORT= <UI PORT of the web service>
 
